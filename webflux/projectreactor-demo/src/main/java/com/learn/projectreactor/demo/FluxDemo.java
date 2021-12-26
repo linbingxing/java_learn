@@ -9,7 +9,5 @@ public class FluxDemo {
 
     public static void main(String[] args) {
         Flux.range(1,100).subscribe(System.out::println);
-
-
     }
 }

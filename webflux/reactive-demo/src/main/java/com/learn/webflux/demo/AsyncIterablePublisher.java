@@ -79,13 +79,19 @@ public class AsyncIterablePublisher<T> implements Publisher<T> {
     }
 
     // 取消订阅的信号
-    enum Cancel implements Signal {Instance;}
+    enum Cancel implements Signal {
+        Instance;
+    }
 
     // 订阅的信号
-    enum Subscribe implements Signal {Instance;}
+    enum Subscribe implements Signal {
+        Instance;
+    }
 
     // 发送的信号
-    enum Send implements Signal {Instance;}
+    enum Send implements Signal {
+        Instance;
+    }
 
     // 静态类，表示请求信号
     static final class Request implements Signal {
@@ -252,7 +258,8 @@ public class AsyncIterablePublisher<T> implements Publisher<T> {
                         // 发送onComplete信号给订阅者
                         subscriber.onComplete();
                     }
-                } while (!cancelled           // 如果没有取消订阅。This makes sure that rule 1.8 is upheld, i.e. we need to stop signalling "eventually"
+                }
+                while (!cancelled           // 如果没有取消订阅。This makes sure that rule 1.8 is upheld, i.e. we need to stop signalling "eventually"
                         && --leftInBatch > 0 // 如果还有剩余批次的元素。This makes sure that we only send `batchSize` number of elements in one go (so we can yield to other Runnables)
                         && --demand > 0);    // 如果还有订阅者的请求。This makes sure that rule 1.1 is upheld (sending more than was demanded)
 
@@ -274,8 +281,9 @@ public class AsyncIterablePublisher<T> implements Publisher<T> {
         /**
          * 规范1.6指出，`Publisher`在通知订阅者`onError`或者`onComplete`信号之前，
          * **必须**先取消订阅者的订阅票据（`Subscription`）。
-         *
+         * <p>
          * 当发送onError信号之前先取消订阅
+         *
          * @param t
          */
         private void terminateDueTo(final Throwable t) {

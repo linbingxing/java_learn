@@ -18,7 +18,7 @@ public class ReactiveDemo {
         AsyncIterablePublisher<Integer> publisher
                 = new AsyncIterablePublisher<>(elements, executorService);
 
-        final AsyncSubscriber<Integer> subscriber = new AsyncSubscriber<>(Executors.newFixedThreadPool(2)) {
+        final AsyncSubscriber<Integer> subscriber = new AsyncSubscriber<Integer>(Executors.newFixedThreadPool(2)) {
             @Override
             protected boolean whenNext(Integer element) {
                 System.out.println("接收到的流元素：" + element);

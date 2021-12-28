@@ -18,7 +18,9 @@ public abstract class AsyncSubscriber<T> implements Subscriber<T>, Runnable {
     }
 
     // 表示数据流发送完成，完成信号
-    private enum OnComplete implements Signal {Instance;}
+    private enum OnComplete implements Signal {
+        Instance;
+    }
 
     // 表示发布者给订阅者的异常信号
     private static class OnError implements Signal {
@@ -59,6 +61,7 @@ public abstract class AsyncSubscriber<T> implements Subscriber<T>, Runnable {
     /**
      * 仅有这一个构造器，只能被子类调用
      * 传递一个线程池即可
+     *
      * @param executor 线程池对象
      */
     protected AsyncSubscriber(Executor executor) {
@@ -93,7 +96,6 @@ public abstract class AsyncSubscriber<T> implements Subscriber<T>, Runnable {
     // for convenience.
 
     /**
-     *
      * @param element
      * @return
      */
@@ -112,14 +114,12 @@ public abstract class AsyncSubscriber<T> implements Subscriber<T>, Runnable {
     // override this method to implement your own custom onError logic.
 
     /**
-     *
      * @param error
      */
     protected void whenError(Throwable error) {
     }
 
     /**
-     *
      * @param s
      */
     private final void handleOnSubscribe(final Subscription s) {
@@ -148,7 +148,6 @@ public abstract class AsyncSubscriber<T> implements Subscriber<T>, Runnable {
     }
 
     /**
-     *
      * @param element
      */
     private final void handleOnNext(final T element) {
@@ -199,7 +198,6 @@ public abstract class AsyncSubscriber<T> implements Subscriber<T>, Runnable {
     // Here it is important that we do not violate 2.2 and 2.3 by calling methods on the `Subscription` or `Publisher`
 
     /**
-     *
      * @param error
      */
     private void handleOnError(final Throwable error) {
@@ -215,7 +213,6 @@ public abstract class AsyncSubscriber<T> implements Subscriber<T>, Runnable {
     // We implement the OnX methods on `Subscriber` to send Signals that we will process asycnhronously, but only one at a time
 
     /**
-     *
      * @param s
      */
     @Override
@@ -227,7 +224,6 @@ public abstract class AsyncSubscriber<T> implements Subscriber<T>, Runnable {
     }
 
     /**
-     *
      * @param element
      */
     @Override
@@ -239,7 +235,6 @@ public abstract class AsyncSubscriber<T> implements Subscriber<T>, Runnable {
     }
 
     /**
-     *
      * @param t
      */
     @Override
@@ -310,6 +305,7 @@ public abstract class AsyncSubscriber<T> implements Subscriber<T>, Runnable {
     /**
      * What `signal` does is that it sends signals to the `Subscription` asynchronously
      * 该方法异步地向订阅票据发送信号
+     *
      * @param signal
      */
     private void signal(final Signal signal) {

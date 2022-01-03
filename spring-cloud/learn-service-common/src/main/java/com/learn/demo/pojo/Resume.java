@@ -2,16 +2,13 @@ package com.learn.demo.pojo;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 @Data
-@Entity
-@Table(name="r_resume")
+//@Entity
+//@Table(name="r_resume")
 public class Resume {
-    @Id
+
+
+    //    @Id
     private Long id; // 主键
     private String sex; // 性别
     private String birthday; // 生日

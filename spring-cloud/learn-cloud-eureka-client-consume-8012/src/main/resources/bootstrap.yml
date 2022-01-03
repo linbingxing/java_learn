@@ -1,8 +1,8 @@
 server:
-  port: 8082
+  port: 8012
 spring:
   application:
-    name: learn-service-user
+    name: learn-cloud-eureka-client-consume-8012
 #注册到Eureka服务中心
 eureka:
   client:
@@ -22,3 +22,9 @@ management:
     web:
       exposure:
         include: "*"
+
+#针对的被调⽤⽅微服务名称,不加就是全局⽣效
+#learn-cloud-eureka-client-provider:
+#  ribbon:
+#    NFLoadBalancerRuleClassName:
+#      com.netflix.loadbalancer.RandomRule #负载策略调整

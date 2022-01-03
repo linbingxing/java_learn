@@ -6,10 +6,13 @@
     <modules>
         <module>learn-cloud-eureka-server-8761</module>
         <module>learn-cloud-eureka-server-8762</module>
-        <module>learn-service-resume-8080</module>
-        <module>learn-service-resume-8081</module>
+        <module>learn-service-order-8080</module>
+        <module>learn-service-order-8081</module>
         <module>learn-service-common</module>
         <module>learn-service-user-8082</module>
+        <module>learn-cloud-eureka-client-provider-8010</module>
+        <module>learn-cloud-eureka-client-provider-8011</module>
+        <module>learn-cloud-eureka-client-consume-8012</module>
     </modules>
     <!--spring boot 父启动器依赖-->
     <parent>

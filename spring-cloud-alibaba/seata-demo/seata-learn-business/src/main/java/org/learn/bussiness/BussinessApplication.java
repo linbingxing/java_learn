@@ -2,13 +2,13 @@ package org.learn.bussiness;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@SpringBootApplication(exclude = DataSourceAutoConfiguration.class,
-        scanBasePackages = "org.learn")
+//@SpringBootApplication(exclude = DataSourceAutoConfiguration.class,
+//        scanBasePackages = "org.learn")
+@SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients(basePackages = {"org.learn.bussiness.feign"})
 @EnableTransactionManagement

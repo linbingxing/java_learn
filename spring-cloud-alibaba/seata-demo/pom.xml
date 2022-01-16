@@ -17,6 +17,9 @@
         <module>seata-learn-storage</module>
         <module>seata-learn-points</module>
         <module>seata-learn-common</module>
+        <module>seata-learn-order-tcc</module>
+        <module>seata-learn-storage-tcc</module>
+        <module>seata-learn-points-tcc</module>
     </modules>
 
     <properties>

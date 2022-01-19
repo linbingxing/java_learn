@@ -1,0 +1,2 @@
+hello=org.learn.dubbo.spi.demo.api.impl.HelloServiceImpl
+hello2=org.learn.dubbo.spi.demo.api.impl.Hello2ServiceImpl

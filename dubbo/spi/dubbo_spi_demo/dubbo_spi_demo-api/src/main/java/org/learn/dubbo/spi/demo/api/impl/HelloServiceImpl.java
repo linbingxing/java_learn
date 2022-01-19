@@ -1,5 +1,6 @@
 package org.learn.dubbo.spi.demo.api.impl;
 
+import org.apache.dubbo.common.URL;
 import org.learn.dubbo.spi.demo.api.HelloService;
 
 /**
@@ -12,5 +13,10 @@ public class HelloServiceImpl implements HelloService {
     @Override
     public void say() {
         System.out.println("Dubbo Say Hello ");
+    }
+
+    @Override
+    public void say(URL url) {
+        System.out.println("Dubbo Say Hello "+url);
     }
 }

@@ -13,7 +13,8 @@ import org.learn.dubbo.spi.demo.api.HelloService;
 public class DubboSpiAdaptiveMain {
 
     public static void main(String[] args) {
-        URL url = URL.valueOf("test://localhost/hell0?hello.service=hello");
+        //hello.service 接口名称
+        URL url = URL.valueOf("test://localhost/hell0?hello.service=hello2");
 
         HelloService helloService = ExtensionLoader.getExtensionLoader(HelloService.class).getAdaptiveExtension();
         helloService.say(url);

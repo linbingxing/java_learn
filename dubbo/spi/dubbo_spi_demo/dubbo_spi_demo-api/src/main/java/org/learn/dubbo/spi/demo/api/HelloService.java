@@ -1,5 +1,7 @@
 package org.learn.dubbo.spi.demo.api;
 
+import org.apache.dubbo.common.URL;
+import org.apache.dubbo.common.extension.Adaptive;
 import org.apache.dubbo.common.extension.SPI;
 
 /**
@@ -14,4 +16,7 @@ public interface HelloService {
 
 
     public void  say();
+
+    @Adaptive
+    public void say(URL url);
 }

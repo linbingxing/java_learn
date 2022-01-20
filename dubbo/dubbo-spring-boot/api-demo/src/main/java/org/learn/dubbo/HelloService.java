@@ -6,5 +6,9 @@ package org.learn.dubbo;
   * @date 2022/1/20 12:38
   * @version 1.0.0
  **/
-public class HelloService {
+public interface HelloService {
+
+    String sayHello(String name);
+
+
 }

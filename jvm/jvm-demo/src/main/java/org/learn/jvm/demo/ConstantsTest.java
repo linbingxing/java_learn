@@ -8,15 +8,19 @@ package org.learn.jvm.demo;
  **/
 public class ConstantsTest {
 
-    public String name = "Hello World";
-    public final int num = 100;
+//    public String name = "Hello World";
+//    public final int num = 100;
+//
+//    public ConstantsTest(String name) {
+//        this.name = name;
+//    }
+//
+//    public void info() {
+//        System.out.println(name);
+//        System.out.println(num);
+//    }
 
-    public ConstantsTest(String name) {
-        this.name = name;
-    }
+    public static void main(String[] args) {
 
-    public void info() {
-        System.out.println(name);
-        System.out.println(num);
     }
 }

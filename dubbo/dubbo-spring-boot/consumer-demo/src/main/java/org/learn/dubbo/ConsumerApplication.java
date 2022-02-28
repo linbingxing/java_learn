@@ -6,6 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 /**
@@ -15,13 +16,13 @@ import org.springframework.context.annotation.Bean;
  * @date 2022/1/20 12:55
  **/
 
-@EnableAutoConfiguration
+@SpringBootApplication
 public class ConsumerApplication {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
     public static void main(String[] args) {
-        SpringApplication.run(ConsumerApplication.class).close();
+        SpringApplication.run(ConsumerApplication.class);
     }
 
     @DubboReference(version = "1.0")

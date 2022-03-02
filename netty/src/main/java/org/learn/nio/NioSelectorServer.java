@@ -51,6 +51,7 @@ public class NioSelectorServer {
                 }
                 //10.判断是否是客户端读就绪事件SelectionKey.isReadable()
                 if(selectionKey.isReadable()){
+
                     SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
                     //11.得到客户端通道,读取数据到缓冲区
                     ByteBuffer byteBuffer = ByteBuffer.allocate(1024);

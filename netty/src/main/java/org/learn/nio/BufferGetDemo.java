@@ -56,6 +56,7 @@ public class BufferGetDemo {
         System.out.print("   capacity=" + byteBuffer.capacity());
         System.out.print("   remaining=" + byteBuffer.remaining());
         System.out.println();
+
         // 切换写模式,覆盖之前索引所在位置的值
         System.out.println("写模式--------------");
         byteBuffer.clear();

@@ -55,13 +55,19 @@ public class NioSelectorServer {
                     SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
                     //11.得到客户端通道,读取数据到缓冲区
                     ByteBuffer byteBuffer = ByteBuffer.allocate(1024);
-                    int read = socketChannel.read(byteBuffer);
-                    if(read > 0){
+                    int read;
+                    while ((read = socketChannel.read(byteBuffer)) > 0){
+                        byteBuffer.flip();
+                        byte[] bytes = new byte[byteBuffer.remaining()];
+                        byteBuffer.get(bytes);
                         System.out.println("客户端消息："+new String(byteBuffer.array(),0,read,StandardCharsets.UTF_8));
                         //12.给客户端回写数据
                         socketChannel.write(ByteBuffer.wrap("回复：".getBytes(StandardCharsets.UTF_8)));
+                    }
+                    if(read < 0){
                         socketChannel.close();
                     }
+
                 }
                 //13.从集合中删除对应的事件, 因为防止二次处理.
                 iterator.remove();

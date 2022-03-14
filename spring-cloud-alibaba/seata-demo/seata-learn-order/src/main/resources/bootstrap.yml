@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: seata-learn-order
+  # nacos配置
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.56.11:8848
+        username: nacos
+        password: nacos

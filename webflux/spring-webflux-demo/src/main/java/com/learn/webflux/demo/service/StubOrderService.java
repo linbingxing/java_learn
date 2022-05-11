@@ -1,12 +1,14 @@
 package com.learn.webflux.demo.service;
 
 import com.learn.webflux.demo.domain.Order;
+import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+@Service
 public class StubOrderService {
 
     private final Map<String, Order> orders = new ConcurrentHashMap<>();

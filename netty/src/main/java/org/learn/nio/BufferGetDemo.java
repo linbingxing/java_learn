@@ -32,7 +32,6 @@ public class BufferGetDemo {
         for (int i = 0; i < byteBuffer.limit(); i++) {
             System.out.println(byteBuffer.get());
         }
-        System.out.println();
 
         //读取指定索引字节
         System.out.println("读取指定索引字节--------------");

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: demonsetdemo
+  labels:
+    app: demonsetdemo
+spec:
+  template:
+    metadata:
+      name: demonsetdemo
+      labels:
+        app: demonsetdemo
+    spec:
+      containers:
+        - name: demonsetdemo
+          image: nginx:1.17.10-alpine
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+  selector:
+    matchLabels:
+      app: demonsetdemo

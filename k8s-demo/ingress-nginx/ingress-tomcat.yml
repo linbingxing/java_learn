@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: nginx-ingress-test
+spec:
+#  backend:
+#     serviceName: tomcat-svc
+#     servicePort: 8080
+   rules:
+     - host: learn.com
+       http:
+          paths:
+            - path: /
+              backend:
+                serviceName: tomcat-svc
+                servicePort: 8080

@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: pidemo
+  labels:
+    app: pidemo
+spec:
+  template:
+    spec:
+      containers:
+        - name: pidemo
+          image: perl:slim
+          command: ["perl", "-Mbignum=bpi", "-wle", "print bpi(6000)"]
+      restartPolicy: Never
+  backoffLimit: 4
+
+
